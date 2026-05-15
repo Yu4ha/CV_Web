@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Yudha Darmawan · Junior Programmer CV</title>
+  <!-- Google Fonts + modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e9eef5 100%);
+      font-family: 'Inter', sans-serif;
+      color: #1a2a3f;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* main card */
+    .cv-card {
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    /* header area with gradient */
+    .cv-header {
+      background: linear-gradient(135deg, #0f2b3d 0%, #1b4f6e 100%);
+      padding: 2rem 2.2rem;
+      color: white;
+    }
+
+    .name-title h1 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.18);
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      row-gap: 0.8rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.12);
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      backdrop-filter: blur(2px);
+      transition: 0.2s;
+      text-decoration: none;
+      color: white;
+    }
+
+    .contact-item i {
+      font-size: 1rem;
+      width: 20px;
+    }
+
+    .contact-item:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    /* content area */
+    .cv-content {
+      padding: 2rem 2.2rem;
+    }
+
+    /* section styles */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      border-left: 5px solid #1b6b8f;
+      padding-left: 1rem;
+      margin-bottom: 1.2rem;
+      color: #0f3b4f;
+    }
+
+    .section-title i {
+      color: #1f7ea3;
+      font-size: 1.3rem;
+    }
+
+    .summary-text {
+      background: #f3f9fe;
+      padding: 1.2rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #2c4a62;
+      border: 1px solid #e2edf5;
+    }
+
+    /* education grid */
+    .edu-item {
+      background: #fafcff;
+      border: 1px solid #e9f0f5;
+      border-radius: 20px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+    }
+
+    .edu-item:hover {
+      border-color: #cde3ef;
+      box-shadow: 0 6px 12px -8px rgba(0,0,0,0.05);
+    }
+
+    .edu-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #115267;
+    }
+
+    .edu-meta {
+      font-size: 0.8rem;
+      color: #5e7f97;
+      margin: 0.3rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* two column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
+    }
+
+    /* skills chips */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.3rem;
+    }
+
+    .skill-chip {
+      background: #ecf5f9;
+      border-radius: 40px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #175873;
+      transition: 0.1s;
+      border: 1px solid #d4e2ed;
+    }
+
+    .skill-chip:hover {
+      background: #dcecf5;
+      transform: translateY(-1px);
+    }
+
+    /* experience & project items */
+    .exp-item, .project-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px dashed #e2edf5;
+    }
+
+    .exp-header, .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-title, .project-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #1c5a78;
+    }
+
+    .exp-date, .project-date {
+      font-size: 0.7rem;
+      background: #eef3f8;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+
+    .exp-sub {
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #4c7a95;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-desc, .project-desc {
+      font-size: 0.85rem;
+      color: #2e5068;
+      line-height: 1.5;
+      margin-left: 0.2rem;
+    }
+
+    .project-desc ul, .exp-desc ul {
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+    }
+
+    .project-desc li, .exp-desc li {
+      margin-bottom: 0.3rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .tech-stack span {
+      background: #eef2f7;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      color: #1d627f;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #cce0ec, transparent);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      font-size: 0.75rem;
+      color: #6f8ea3;
+      border-top: 1px solid #e2edf5;
+    }
+
+    @media (max-width: 780px) {
+      body {
+        padding: 1rem;
+      }
+      .cv-header, .cv-content {
+        padding: 1.5rem;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .name-title h1 {
+        font-size: 2rem;
+      }
+      .contact-grid {
+        gap: 0.8rem;
+      }
+      .contact-item {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .cv-card {
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .contact-item {
+        background: #f0f0f0;
+        color: black;
+      }
+      .cv-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #1b6b8f;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 1rem;
+    }
+
+    .btn-download:hover {
+      background: #0f5572;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="cv-card">
+    <!-- header with personal info -->
+    <div class="cv-header">
+      <div class="name-title">
+        <h1>YUDHA DARMAWAN</h1>
+        <div class="badge">
+          <i class="fas fa-code"></i> Junior Programmer · Final Year CS Student
+        </div>
+      </div>
+      <div class="contact-grid">
+        <span class="contact-item"><i class="fas fa-phone-alt"></i> 082210795141</span>
+        <span class="contact-item"><i class="fas fa-envelope"></i> yudhdarma04@gmail.com</span>
+        <span class="contact-item"><i class="fas fa-map-marker-alt"></i> Bekasi, 17530</span>
+        <a href="https://github.com/Yu4ha" class="contact-item"><i class="fab fa-github"></i> github.com/Yu4ha</a>
+      </div>
+      <button class="btn-download" id="printCVbtn">
+        <i class="fas fa-download"></i> Download / Print CV (PDF)
+      </button>
+    </div>
+
+    <!-- main content -->
+    <div class="cv-content">
+      <!-- professional summary -->
+      <div class="section">
+        <div class="section-title">
+          <i class="fas fa-user-astronaut"></i> PROFESSIONAL SUMMARY
+        </div>
+        <div class="summary-text">
+          Final-year Computer Science student with proven hands-on experience in full-stack development. 
+          Successfully delivered 2 production-ready applications using modern technologies (Node.js, Express.js, Electron.js, Tauri). 
+          Demonstrated ability to solve real-world technical problems through freelance IT support work. 
+          Strong foundation in both frontend and backend development with a focus on creating practical, user-centered solutions.
+        </div>
+      </div>
+
+      <!-- two columns: left (education + tech skills) & right (exp + projects) -->
+      <div class="two-col">
+        <!-- LEFT COLUMN -->
+        <div>
+          <!-- Education -->
+          <div class="section">
+            <div class="section-title">
+              <i class="fas fa-graduation-cap"></i> EDUCATION
+            </div>
+            <div class="edu-item">
+              <div class="edu-title">Universitas Panca Sakti Bekasi</div>
+              <div class="edu-meta"><i class="fas fa-laptop-code"></i> Bachelor of Computer Science (Teknik Informatika) | Expected Graduation: 2026-2027</div>
+              <div style="font-size: 0.85rem;">• Currently in 8th Semester | GPA: 3.6/4.0</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-title">SMA Negeri 1 Karang Bahagia</div>
+              <div class="edu-meta"><i class="fas fa-school"></i> High School Diploma – Social Sciences | Graduated: 2020</div>
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div class="section">
+            <div class="section-title">
+              <i class="fas fa-microchip"></i> TECHNICAL SKILLS
+            </div>
+            <div class="skills-container">
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">HTML/CSS</span>
+              <span class="skill-chip">Node.js</span>
+              <span class="skill-chip">Express.js</span>
+              <span class="skill-chip">Tauri v2</span>
+              <span class="skill-chip">Electron.js</span>
+              <span class="skill-chip">SQLite / Rusqlite</span>
+              <span class="skill-chip">Socket.io</span>
+              <span class="skill-chip">Git / GitHub</span>
+              <span class="skill-chip">Arduino (Uno, RFID)</span>
+              <span class="skill-chip">WebSocket</span>
+              <span class="skill-chip">Windows / Ubuntu</span>
+              <span class="skill-chip">System Troubleshooting</span>
+              <span class="skill-chip">Data Backup & Recovery</span>
+            </div>
+          </div>
+
+          <!-- Personal Skills -->
+          <div class="section">
+            <div class="section-title">
+              <i class="fas fa-heart"></i> PERSONAL SKILLS
+            </div>
+            <div class="skills-container">
+              <span class="skill-chip">Fast Learner</span>
+              <span class="skill-chip">Adaptable</span>
+              <span class="skill-chip">Problem-Solving</span>
+              <span class="skill-chip">Effective Communication</span>
+              <span class="skill-chip">Team Collaboration</span>
+              <span class="skill-chip">Time Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Experience & Projects -->
+        <div>
+          <!-- Work Experience -->
+          <div class="section">
+            <div class="section-title">
+              <i class="fas fa-briefcase"></i> WORK EXPERIENCE
+            </div>
+            <div class="exp-item">
+              <div class="exp-header">
+                <span class="exp-title">IT Support & Troubleshooting Specialist (Freelance)</span>
+                <span class="exp-date">December 2025</span>
+              </div>
+              <div class="exp-sub">Multiple Companies</div>
+              <div class="exp-desc">
+                <ul style="margin-left: 1rem;">
+                  <li>Successfully diagnosed and resolved critical bootloop issues on office PCs for 2 different companies</li>
+                  <li>Performed complete data backup and system recovery, ensuring zero data loss for critical business files</li>
+                  <li>Executed clean OS reinstallation and system configuration, restoring full functionality within same-day turnaround</li>
+                  <li>Provided post-installation support including software setup and user training</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects & Portfolio -->
+          <div class="section">
+            <div class="section-title">
+              <i class="fas fa-folder-open"></i> PROJECTS & PORTFOLIO
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <span class="project-title">📚 Aplikasi Penilaian Siswa SD (Elementary School Grading App)</span>
+                <span class="project-date">Nov – Dec 2025</span>
+              </div>
+              <div class="exp-sub">Tauri v2, Rusqlite (SQLite), JavaScript | Community Service Project (KKN) - Full-Stack Developer</div>
+              <div class="project-desc">
+                <ul>
+                  <li>Developed a desktop application to streamline student grade management for elementary school teachers, replacing manual record-keeping processes</li>
+                  <li>Implemented comprehensive CRUD operations for student data and grades with embedded local database (Rusqlite)</li>
+                  <li>Built intelligent Excel import feature with automatic table mapping to handle various spreadsheet formats</li>
+                  <li>Designed advanced filtering system by class and academic year with search functionality for student names and NIS/NISN</li>
+                  <li>Created automated graduation certificate printing feature to expedite administrative workflows</li>
+                </ul>
+                <div class="tech-stack"><span>Tauri v2</span><span>SQLite</span><span>JavaScript</span><span>Excel Import</span></div>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <span class="project-title">🏷️ RFID-Based Attendance Application</span>
+                <span class="project-date">September 2024</span>
+              </div>
+              <div class="exp-sub">Arduino Uno, RFID Reader, Node.js, Electron.js, WebSocket, SQLite | Backend Developer (Backend Logic & Arduino Programming)</div>
+              <div class="project-desc">
+                <ul>
+                  <li>Developed a desktop application to automate employee attendance tracking using RFID technology</li>
+                  <li>Programmed Arduino Uno to read RFID cards and transmit data via serial communication to the main application</li>
+                  <li>Built real-time data communication system using Node.js backend with WebSocket protocol</li>
+                  <li>Designed and implemented SQLite database schema for storing and querying attendance records</li>
+                  <li>Created interactive desktop interface using Electron.js for attendance monitoring and reporting</li>
+                </ul>
+                <div class="tech-stack"><span>Arduino</span><span>RFID</span><span>Node.js</span><span>Electron.js</span><span>WebSocket</span><span>SQLite</span></div>
+              </div>
+            </div>
+            <div style="font-size: 0.8rem; margin-top: 0.3rem; color: #2e6a89; background: #ecf5f9; padding: 0.3rem 0.8rem; border-radius: 20px; display: inline-block;">
+              <i class="fab fa-github"></i> More repositories: github.com/Yu4ha
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <hr>
+      <div class="footer">
+        <i class="fas fa-laptop-code"></i> Yudha Darmawan · Final Year CS Student · Open to junior developer opportunities · Bekasi, Indonesia
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const downloadBtn = document.getElementById('printCVbtn');
+    if(downloadBtn) {
+      downloadBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const confirmPrint = confirm("📄 Generate PDF version?\n\nClick OK to open browser print dialog, then choose 'Save as PDF'.");
+        if(confirmPrint) {
+          window.print();
+        }
+      });
+    }
+    console.log("%cYudha Darmawan CV — web ready, responsive design", "color: #1b6b8f; font-weight: bold;");
+  })();
+</script>
+</body>
+</html>
