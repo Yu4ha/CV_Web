@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+<<<<<<< HEAD
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Yudha Darmawan · Junior Programmer CV</title>
   <!-- Google Fonts + modern typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 (free icons) -->
+=======
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+  <title>YUDHA DARMAWAN · RETRO CV · junior programmer</title>
+  <!-- Retro fonts: VT323 + IBM Plex Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+>>>>>>> 18506bb (Retro style)
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -15,6 +23,7 @@
       box-sizing: border-box;
     }
 
+<<<<<<< HEAD
     body {
       background: linear-gradient(135deg, #f0f7ff 0%, #e9eef5 100%);
       font-family: 'Inter', sans-serif;
@@ -197,19 +206,291 @@
       margin-bottom: 1.5rem;
       padding-bottom: 0.8rem;
       border-bottom: 1px dashed #e2edf5;
+=======
+    /* VIBRANT RETRO BACKGROUND: warm synthwave/cassette vibes */
+    body {
+      background: linear-gradient(145deg, #ffdd99 0%, #ffc489 40%, #ffaa6e 100%);
+      font-family: 'IBM Plex Mono', 'Courier New', monospace;
+      color: #2e241f;
+      padding: 1.5rem;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* animated noise overlay (retro texture) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 6px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* floating retro geometric elements */
+    body::after {
+      content: "✦ ⚡ ✦";
+      font-size: 55px;
+      color: #ff5e2e40;
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      pointer-events: none;
+      z-index: 0;
+      font-family: monospace;
+      animation: floatRetro 12s infinite alternate;
+    }
+
+    @keyframes floatRetro {
+      0% { transform: translate(0,0) rotate(0deg); opacity: 0.35; }
+      100% { transform: translate(-25px, -35px) rotate(6deg); opacity: 0.6; }
+    }
+
+    /* main retro container — pixel border + neon */
+    .retro-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: #fff7ef;
+      background-image: radial-gradient(#ffefdc 1.2px, #fff3e6 1.2px);
+      background-size: 24px 24px;
+      border: 4px solid #ff7e3a;
+      box-shadow: 12px 12px 0px #d9430f, 0 0 0 4px #feb27b, 0 0 0 8px #ffdbb5;
+      padding: 1.8rem;
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .retro-container:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 16px 16px 0px #d9430f, 0 0 0 4px #feb27b;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 0.8rem;
+      }
+      .retro-container {
+        padding: 1rem;
+        box-shadow: 6px 6px 0px #d9430f, 0 0 0 4px #feb27b;
+      }
+    }
+
+    /* badge with blink cursor */
+    .badge-retro {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffebd2;
+      border: 2px solid #ff7733;
+      padding: 0.3rem 1.2rem;
+      font-family: 'VT323', monospace;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #b13e00;
+      margin-bottom: 1rem;
+      box-shadow: 3px 3px 0px #ffb26e;
+    }
+
+    .badge-retro i {
+      color: #ff5500;
+    }
+
+    .badge-retro::after {
+      content: "_";
+      animation: blink 1s step-end infinite;
+      margin-left: 5px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* header area */
+    .hero-retro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-info {
+      flex: 2;
+    }
+
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #c13f0c;
+      text-shadow: 3px 3px 0px #ffc48a;
+      margin-bottom: 0.2rem;
+    }
+
+    .retro-tagline {
+      font-size: clamp(0.85rem, 3.5vw, 1rem);
+      border-left: 5px solid #ff884d;
+      padding-left: 0.8rem;
+      margin: 0.5rem 0 0.8rem;
+      font-weight: 600;
+      background: #ffefdf;
+      display: inline-block;
+    }
+
+    /* contact pills retro */
+    .contact-retro-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    .contact-retro-link {
+      border: 2px solid #ffa559;
+      background: #fff0df;
+      padding: 0.35rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #b64512;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 2px 2px 0px #ffbf7a;
+      transition: 0.08s linear;
+    }
+
+    .contact-retro-link:hover {
+      background: #ffdbb5;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0px #ffa03a;
+    }
+
+    /* avatar retro pixel */
+    .avatar-retro {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .pixel-box {
+      width: clamp(100px, 22vw, 140px);
+      height: clamp(100px, 22vw, 140px);
+      background: #ffdebc;
+      border: 3px solid #ff7733;
+      box-shadow: 8px 8px 0px #ff9f5a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      transition: 0.1s;
+    }
+
+    .pixel-box i {
+      font-size: clamp(3rem, 10vw, 4.8rem);
+      color: #e26322;
+    }
+
+    .pixel-box:hover {
+      transform: rotate(2deg);
+    }
+
+    /* 2 column retro grid */
+    .retro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 2rem;
+      margin-top: 1.8rem;
+    }
+
+    @media (max-width: 800px) {
+      .retro-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* sections */
+    .retro-section {
+      margin-bottom: 2rem;
+      border-top: 3px dotted #ffb26e;
+      padding-top: 0.8rem;
+    }
+
+    .retro-section-title {
+      font-family: 'VT323', monospace;
+      font-size: clamp(1.4rem, 5vw, 1.8rem);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #c0450c;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #ffbf80;
+      padding-bottom: 0.3rem;
+      background: #fff0e0;
+      width: fit-content;
+      padding-right: 1rem;
+    }
+
+    /* skill chips */
+    .skill-retro {
+      background: #ffefdb;
+      border: 2px solid #ff9f5a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      display: inline-block;
+      margin: 0.25rem 0.4rem 0.25rem 0;
+      box-shadow: 2px 2px 0px #ffbf80;
+      transition: 0.05s linear;
+    }
+
+    .skill-retro:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px #ffa03a;
+      background: #ffe2c1;
+    }
+
+    /* exp & project cards */
+    .exp-retro-card, .project-retro-card {
+      background: #fffaf3;
+      border-left: 6px solid #ffaa66;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 3px 3px 0px #ffe0bb;
+      transition: all 0.1s;
+    }
+
+    .exp-retro-card:hover, .project-retro-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #ffc591;
+      background: #ffffff;
+>>>>>>> 18506bb (Retro style)
     }
 
     .exp-header, .project-header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+<<<<<<< HEAD
       align-items: baseline;
       gap: 0.5rem;
+=======
+      gap: 0.6rem;
+>>>>>>> 18506bb (Retro style)
       margin-bottom: 0.3rem;
     }
 
     .exp-title, .project-title {
       font-weight: 800;
+<<<<<<< HEAD
       font-size: 1rem;
       color: #1c5a78;
     }
@@ -226,10 +507,29 @@
       font-weight: 600;
       font-size: 0.8rem;
       color: #4c7a95;
+=======
+      font-size: 0.9rem;
+      color: #bd430f;
+    }
+
+    .exp-date, .project-date {
+      font-size: 0.65rem;
+      background: #ffdec2;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid #ffb366;
+      font-weight: 700;
+    }
+
+    .exp-sub {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #b75728;
+>>>>>>> 18506bb (Retro style)
       margin-bottom: 0.5rem;
     }
 
     .exp-desc, .project-desc {
+<<<<<<< HEAD
       font-size: 0.85rem;
       color: #2e5068;
       line-height: 1.5;
@@ -243,16 +543,26 @@
 
     .project-desc li, .exp-desc li {
       margin-bottom: 0.3rem;
+=======
+      font-size: 0.73rem;
+      line-height: 1.45;
+      color: #5d351b;
+>>>>>>> 18506bb (Retro style)
     }
 
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
+<<<<<<< HEAD
       gap: 0.5rem;
+=======
+      gap: 0.4rem;
+>>>>>>> 18506bb (Retro style)
       margin-top: 0.6rem;
     }
 
     .tech-stack span {
+<<<<<<< HEAD
       background: #eef2f7;
       font-size: 0.7rem;
       font-weight: 500;
@@ -338,10 +648,85 @@
     .btn-download:hover {
       background: #0f5572;
       transform: translateY(-2px);
+=======
+      background: #ffe0c4;
+      font-size: 0.6rem;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid #ff9966;
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.2rem;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .hr-retro {
+      margin: 1rem 0;
+      border: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ffaa66, #ffd9a3, #ffaa66);
+    }
+
+    .footer-retro {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-top: 2px solid #ffc084;
+      padding-top: 1rem;
+      color: #b2511e;
+    }
+
+    .btn-retro {
+      background: #ffdbbc;
+      border: 2px solid #ff7733;
+      padding: 0.5rem 1.2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: bold;
+      color: #bc4512;
+      margin-top: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.75rem;
+      box-shadow: 3px 3px 0px #ffa040;
+      transition: 0.1s;
+    }
+
+    .btn-retro:hover {
+      background: #ffc48a;
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px #ff8230;
+    }
+
+    @media (max-width: 550px) {
+      .exp-header, .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* glitch effect for main title */
+    h1:hover {
+      animation: glitch 0.2s linear 2;
+    }
+
+    @keyframes glitch {
+      0% { transform: skew(0deg); }
+      50% { transform: skew(2deg, 0.5deg); text-shadow: -1px 0 #ffbb77, 1px 0 #ff884d; }
+      100% { transform: skew(0deg); }
+>>>>>>> 18506bb (Retro style)
     }
   </style>
 </head>
 <body>
+<<<<<<< HEAD
 <div class="container">
   <div class="cv-card">
     <!-- header with personal info -->
@@ -515,10 +900,189 @@
       </div>
     </div>
   </div>
+=======
+<div class="retro-container">
+  <!-- top badges row -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 1rem;">
+    <div class="badge-retro">
+      <i class="fas fa-gamepad"></i> YUDHA DARMAWAN :: JUNIOR_DEV
+    </div>
+    <div class="badge-retro" style="background: #ffe6cf;">
+      <i class="fas fa-tape"></i> RETRO·FULLSTACK·CV
+    </div>
+  </div>
+
+  <!-- hero area -->
+  <div class="hero-retro">
+    <div class="hero-info">
+      <h1>YUDHA DARMAWAN</h1>
+      <div class="retro-tagline">
+        <i class="fas fa-crt"></i> >_ final year CS · full-stack crafter · IT fixer
+      </div>
+      <div class="contact-retro-list">
+        <a href="#" class="contact-retro-link"><i class="fas fa-phone-alt"></i> 082210795141</a>
+        <a href="#" class="contact-retro-link"><i class="fas fa-envelope"></i> yudhdarma04@gmail.com</a>
+        <a href="#" class="contact-retro-link"><i class="fas fa-map-marker-alt"></i> Bekasi, 17530</a>
+        <a href="https://github.com/Yu4ha" class="contact-retro-link"><i class="fab fa-github-alt"></i> github.com/Yu4ha</a>
+      </div>
+      <button class="btn-retro" id="retroPrintBtn">
+        <i class="fas fa-save"></i> SAVE CV.PDF [print]
+      </button>
+    </div>
+    <div class="avatar-retro">
+      <div class="pixel-box">
+        <i class="fas fa-user-astronaut"></i>
+      </div>
+      <div style="text-align: center; font-size: 0.65rem; font-weight: bold; margin-top: 0.5rem; color: #e2763a;">
+        <i class="fas fa-bolt"></i> interactive retro
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY retro style -->
+  <div class="retro-section">
+    <div class="retro-section-title">
+      <i class="fas fa-terminal"></i> # PROFESSIONAL_SUMMARY
+    </div>
+    <div style="background: #fff4e8; padding: 1rem; border: 2px solid #ffbb77; font-size: 0.85rem; line-height: 1.5;">
+      Final-year Computer Science student with proven hands-on experience in full-stack development.
+      Successfully delivered 2 production-ready applications using modern technologies (Node.js, Express.js, Electron.js, Tauri).
+      Demonstrated ability to solve real-world technical problems through freelance IT support work.
+      Strong foundation in both frontend and backend development with a focus on creating practical, user-centered solutions.
+    </div>
+  </div>
+
+  <!-- 2-COLUMN MAIN -->
+  <div class="retro-grid">
+    <!-- LEFT COLUMN: education & tech skills & personal -->
+    <div>
+      <div class="retro-section">
+        <div class="retro-section-title">
+          <i class="fas fa-graduation-cap"></i> /EDU.BIN
+        </div>
+        <div class="exp-retro-card" style="border-left-color: #ff884d;">
+          <div class="exp-header">
+            <span class="exp-title">Universitas Panca Sakti Bekasi</span>
+            <span class="exp-date">2026-2027 (exp.)</span>
+          </div>
+          <div class="exp-sub">Bachelor of Computer Science (Teknik Informatika)</div>
+          <div class="exp-desc">Currently in 8th Semester | GPA: 3.6/4.0</div>
+        </div>
+        <div class="exp-retro-card" style="border-left-color: #ff884d;">
+          <div class="exp-header">
+            <span class="exp-title">SMA Negeri 1 Karang Bahagia</span>
+            <span class="exp-date">2020</span>
+          </div>
+          <div class="exp-sub">High School Diploma – Social Sciences</div>
+        </div>
+      </div>
+
+      <div class="retro-section">
+        <div class="retro-section-title">
+          <i class="fas fa-microchip"></i> # TECH_STACK
+        </div>
+        <div>
+          <span class="skill-retro">JavaScript</span><span class="skill-retro">HTML/CSS</span><span class="skill-retro">Node.js</span>
+          <span class="skill-retro">Express.js</span><span class="skill-retro">Tauri v2</span><span class="skill-retro">Electron.js</span>
+          <span class="skill-retro">SQLite / Rusqlite</span><span class="skill-retro">Socket.io</span><span class="skill-retro">Git/GitHub</span>
+          <span class="skill-retro">Arduino (Uno, RFID)</span><span class="skill-retro">WebSocket</span><span class="skill-retro">Windows/Ubuntu</span>
+          <span class="skill-retro">System Troubleshooting</span><span class="skill-retro">Data Backup & Recovery</span>
+        </div>
+      </div>
+
+      <div class="retro-section">
+        <div class="retro-section-title">
+          <i class="fas fa-heart"></i> # PERSONAL_SKILLS
+        </div>
+        <div>
+          <span class="skill-retro">Fast Learner</span><span class="skill-retro">Adaptable</span>
+          <span class="skill-retro">Problem-Solving</span><span class="skill-retro">Effective Communication</span>
+          <span class="skill-retro">Team Collaboration</span><span class="skill-retro">Time Management</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: experience + projects -->
+    <div>
+      <div class="retro-section">
+        <div class="retro-section-title">
+          <i class="fas fa-briefcase"></i> >_ WORK.LOG
+        </div>
+        <div class="exp-retro-card">
+          <div class="exp-header">
+            <span class="exp-title">IT Support & Troubleshooting Specialist (Freelance)</span>
+            <span class="exp-date">December 2025</span>
+          </div>
+          <div class="exp-sub">Multiple Companies</div>
+          <div class="exp-desc">
+            <ul>
+              <li>Resolved critical bootloop issues on office PCs for 2 companies</li>
+              <li>Complete data backup & recovery with zero data loss</li>
+              <li>Clean OS reinstallation & same-day turnaround</li>
+              <li>Post-installation support & user training</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="retro-section">
+        <div class="retro-section-title">
+          <i class="fas fa-folder-tree"></i> /PROJECTS
+        </div>
+        <!-- Project 1 -->
+        <div class="project-retro-card">
+          <div class="project-header">
+            <span class="project-title">📚 Aplikasi Penilaian Siswa SD (Grading App)</span>
+            <span class="project-date">Nov–Dec 2025</span>
+          </div>
+          <div class="exp-sub">Tauri v2, Rusqlite, JavaScript | KKN project - Full-Stack</div>
+          <div class="project-desc">
+            <ul>
+              <li>Desktop app for elementary school grade management replacing manual records</li>
+              <li>CRUD operations + embedded local DB (Rusqlite)</li>
+              <li>Excel import feature with automatic mapping</li>
+              <li>Filter by class/academic year, search by NIS/NISN</li>
+              <li>Automated graduation certificate printing</li>
+            </ul>
+            <div class="tech-stack"><span>Tauri v2</span><span>SQLite</span><span>JavaScript</span><span>Excel import</span></div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-retro-card">
+          <div class="project-header">
+            <span class="project-title">🏷️ RFID-Based Attendance Application</span>
+            <span class="project-date">September 2024</span>
+          </div>
+          <div class="exp-sub">Arduino Uno, RFID, Node.js, Electron.js, WebSocket, SQLite</div>
+          <div class="project-desc">
+            <ul>
+              <li>RFID automated attendance tracking desktop app</li>
+              <li>Arduino programming to read RFID cards via serial communication</li>
+              <li>Real-time WebSocket + Node.js backend</li>
+              <li>SQLite schema for attendance records</li>
+              <li>Electron.js interactive dashboard</li>
+            </ul>
+            <div class="tech-stack"><span>Arduino</span><span>RFID</span><span>Node.js</span><span>Electron.js</span><span>WebSocket</span><span>SQLite</span></div>
+          </div>
+        </div>
+        <div style="margin-top: 0.2rem;">
+          <span class="skill-retro"><i class="fab fa-github"></i> github.com/Yu4ha</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr-retro"></div>
+  <div class="footer-retro">
+    <i class="fas fa-cassette-tape"></i> YUDHA DARMAWAN · Final Year CS Student · Open for junior developer roles · Bekasi, Indonesia 
+    <i class="fas fa-sync-alt"></i> retro vibes / modern stack
+  </div>
+>>>>>>> 18506bb (Retro style)
 </div>
 
 <script>
   (function() {
+<<<<<<< HEAD
     const downloadBtn = document.getElementById('printCVbtn');
     if(downloadBtn) {
       downloadBtn.addEventListener('click', (e) => {
@@ -530,6 +1094,29 @@
       });
     }
     console.log("%cYudha Darmawan CV — web ready, responsive design", "color: #1b6b8f; font-weight: bold;");
+=======
+    const retroPrint = document.getElementById('retroPrintBtn');
+    if(retroPrint) {
+      retroPrint.addEventListener('click', (e) => {
+        e.preventDefault();
+        const wantPrint = confirm("⚡ RETRO MODE ⚡\nSave as PDF? Click OK to open browser print, then choose 'Save as PDF'.");
+        if(wantPrint) window.print();
+        else alert("📀 Use CTRL+P / CMD+P to capture this retro-fresh CV!");
+      });
+    }
+    // small interactive console greet
+    console.log("%c🕹️ YUDHA DARMAWAN · RETRO CV · full-stack, Arduino, Tauri, ready for challenge", "color: #ff5e2e; font-family: monospace; font-weight: bold; font-size: 12px;");
+    // tiny hover effect for skill chips (no conflict)
+    const chips = document.querySelectorAll('.skill-retro, .project-retro-card, .exp-retro-card');
+    chips.forEach(el => {
+      el.addEventListener('click', (e) => {
+        if(e.target.closest('.contact-retro-link')) return;
+        const tmp = e.currentTarget;
+        tmp.style.transform = 'scale(0.99)';
+        setTimeout(() => { tmp.style.transform = ''; }, 100);
+      });
+    });
+>>>>>>> 18506bb (Retro style)
   })();
 </script>
 </body>
