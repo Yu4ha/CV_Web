@@ -1,0 +1,441 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* VIBRANT RETRO BACKGROUND: warm synthwave/cassette vibes */
+    body {
+      background: linear-gradient(145deg, #ffdd99 0%, #ffc489 40%, #ffaa6e 100%);
+      font-family: 'IBM Plex Mono', 'Courier New', monospace;
+      color: #2e241f;
+      padding: 1.5rem;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* animated noise overlay (retro texture) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 6px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* floating retro geometric elements */
+    body::after {
+      content: "✦ ⚡ ✦";
+      font-size: 55px;
+      color: #ff5e2e40;
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      pointer-events: none;
+      z-index: 0;
+      font-family: monospace;
+      animation: floatRetro 12s infinite alternate;
+    }
+
+    @keyframes floatRetro {
+      0% { transform: translate(0,0) rotate(0deg); opacity: 0.35; }
+      100% { transform: translate(-25px, -35px) rotate(6deg); opacity: 0.6; }
+    }
+
+    /* main retro container — pixel border + neon */
+    .retro-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: #fff7ef;
+      background-image: radial-gradient(#ffefdc 1.2px, #fff3e6 1.2px);
+      background-size: 24px 24px;
+      border: 4px solid #ff7e3a;
+      box-shadow: 12px 12px 0px #d9430f, 0 0 0 4px #feb27b, 0 0 0 8px #ffdbb5;
+      padding: 1.8rem;
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .retro-container:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 16px 16px 0px #d9430f, 0 0 0 4px #feb27b;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 0.8rem;
+      }
+      .retro-container {
+        padding: 1rem;
+        box-shadow: 6px 6px 0px #d9430f, 0 0 0 4px #feb27b;
+      }
+    }
+
+    /* badge with blink cursor */
+    .badge-retro {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffebd2;
+      border: 2px solid #ff7733;
+      padding: 0.3rem 1.2rem;
+      font-family: 'VT323', monospace;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #b13e00;
+      margin-bottom: 1rem;
+      box-shadow: 3px 3px 0px #ffb26e;
+    }
+
+    .badge-retro i {
+      color: #ff5500;
+    }
+
+    .badge-retro::after {
+      content: "_";
+      animation: blink 1s step-end infinite;
+      margin-left: 5px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* header area */
+    .hero-retro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-info {
+      flex: 2;
+    }
+
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #c13f0c;
+      text-shadow: 3px 3px 0px #ffc48a;
+      margin-bottom: 0.2rem;
+    }
+
+    .retro-tagline {
+      font-size: clamp(0.85rem, 3.5vw, 1rem);
+      border-left: 5px solid #ff884d;
+      padding-left: 0.8rem;
+      margin: 0.5rem 0 0.8rem;
+      font-weight: 600;
+      background: #ffefdf;
+      display: inline-block;
+    }
+
+    /* contact pills retro */
+    .contact-retro-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    .contact-retro-link {
+      border: 2px solid #ffa559;
+      background: #fff0df;
+      padding: 0.35rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #b64512;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 2px 2px 0px #ffbf7a;
+      transition: 0.08s linear;
+    }
+
+    .contact-retro-link:hover {
+      background: #ffdbb5;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0px #ffa03a;
+    }
+
+    /* avatar retro pixel */
+    .avatar-retro {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .pixel-box {
+      width: clamp(100px, 22vw, 140px);
+      height: clamp(100px, 22vw, 140px);
+      background: #ffdebc;
+      border: 3px solid #ff7733;
+      box-shadow: 8px 8px 0px #ff9f5a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      transition: 0.1s;
+    }
+
+    .pixel-box i {
+      font-size: clamp(3rem, 10vw, 4.8rem);
+      color: #e26322;
+    }
+
+    .pixel-box:hover {
+      transform: rotate(2deg);
+    }
+
+    /* 2 column retro grid */
+    .retro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 2rem;
+      margin-top: 1.8rem;
+    }
+
+    @media (max-width: 800px) {
+      .retro-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* sections */
+    .retro-section {
+      margin-bottom: 2rem;
+      border-top: 3px dotted #ffb26e;
+      padding-top: 0.8rem;
+    }
+
+    .retro-section-title {
+      font-family: 'VT323', monospace;
+      font-size: clamp(1.4rem, 5vw, 1.8rem);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #c0450c;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #ffbf80;
+      padding-bottom: 0.3rem;
+      background: #fff0e0;
+      width: fit-content;
+      padding-right: 1rem;
+    }
+
+    /* skill chips */
+    .skill-retro {
+      background: #ffefdb;
+      border: 2px solid #ff9f5a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      display: inline-block;
+      margin: 0.25rem 0.4rem 0.25rem 0;
+      box-shadow: 2px 2px 0px #ffbf80;
+      transition: 0.05s linear;
+    }
+
+    .skill-retro:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px #ffa03a;
+      background: #ffe2c1;
+    }
+
+    /* exp & project cards */
+    .exp-retro-card, .project-retro-card {
+      background: #fffaf3;
+      border-left: 6px solid #ffaa66;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 3px 3px 0px #ffe0bb;
+      transition: all 0.1s;
+    }
+
+    .exp-retro-card:hover, .project-retro-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #ffc591;
+      background: #ffffff;
+    }
+
+    .exp-header, .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-title, .project-title {
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #bd430f;
+    }
+
+    .exp-date, .project-date {
+      font-size: 0.65rem;
+      background: #ffdec2;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid #ffb366;
+      font-weight: 700;
+    }
+
+    .exp-sub {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #b75728;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-desc, .project-desc {
+      font-size: 0.73rem;
+      line-height: 1.45;
+      color: #5d351b;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .tech-stack span {
+      background: #ffe0c4;
+      font-size: 0.6rem;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid #ff9966;
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.2rem;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .hr-retro {
+      margin: 1rem 0;
+      border: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ffaa66, #ffd9a3, #ffaa66);
+    }
+
+    .footer-retro {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-top: 2px solid #ffc084;
+      padding-top: 1rem;
+      color: #b2511e;
+    }
+
+    .btn-retro {
+      background: #ffdbbc;
+      border: 2px solid #ff7733;
+      padding: 0.5rem 1.2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: bold;
+      color: #bc4512;
+      margin-top: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.75rem;
+      box-shadow: 3px 3px 0px #ffa040;
+      transition: 0.1s;
+    }
+
+    .btn-retro:hover {
+      background: #ffc48a;
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px #ff8230;
+    }
+
+    @media (max-width: 550px) {
+      .exp-header, .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* glitch effect for main title */
+    h1:hover {
+      animation: glitch 0.2s linear 2;
+    }
+
+    @keyframes glitch {
+      0% { transform: skew(0deg); }
+      50% { transform: skew(2deg, 0.5deg); text-shadow: -1px 0 #ffbb77, 1px 0 #ff884d; }
+      100% { transform: skew(0deg); }
+    }
+    
+    /* --- GALLERY STYLES (modified for wider images on mobile) --- */
+    .gallery-retro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    }
+    .gallery-item {
+    background: #fff7ef;
+    border: 3px solid #ffaa66;
+    padding: 0.5rem;
+    box-shadow: 6px 6px 0px #ffcf9a;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    width: 280px;          /* lebar tetap yang cukup besar di desktop */
+    max-width: 100%;       /* biar tidak overflow di layar kecil */
+    text-align: center;
+    }
+    .gallery-item:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0px #ffb36b;
+    }
+    .gallery-item img {
+    width: 100%;           /* gambar memenuhi lebar container */
+    height: auto;
+    display: block;
+    border: 1px solid #ffcd94;
+    }
+    .gallery-caption {
+    font-size: 0.7rem;     /* sedikit lebih besar biar terbaca */
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #b75728;
+    font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* KHUSUS HP: buat galeri 1 kolom dan item lebih lebar */
+    @media (max-width: 680px) {
+    .gallery-retro {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery-item {
+        width: 95%;           /* hampir full lebar layar */
+        max-width: 400px;     /* tapi tidak kegedean, tetap proporsional */
+    }
+    .gallery-caption {
+        font-size: 0.75rem;
+    }
+    }
+
