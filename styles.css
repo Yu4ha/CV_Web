@@ -88,8 +88,8 @@ body {
 }
 
 .id-chip {
-  width: 44px;
-  height: 44px;
+  width: 100px;
+  height: 100px;
   border: 1.5px solid var(--navy);
   color: var(--navy);
   font-family: var(--font-mono);
